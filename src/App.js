@@ -62,7 +62,7 @@ function App() {
     const [mas, setMas] = React.useState([])
     const [loading, setLoading] = React.useState(true)
     // const url = ''
-    
+
     useEffect(() => {
         Promise.resolve(todo)
         // fetch(url)

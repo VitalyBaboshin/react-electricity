@@ -1,5 +1,5 @@
 import React from "react"
-import  "./tableItem.css";
+// import  "./tableItem.css";
 
 function TableItem({elem, index}) {
     return (

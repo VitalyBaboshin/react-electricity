@@ -61,17 +61,17 @@ function App() {
 
     const [mas, setMas] = React.useState([])
     const [loading, setLoading] = React.useState(true)
-    // const url = ''
+    const url = 'http://localhost:5000/electricity/'
 
     useEffect(() => {
         Promise.resolve(todo)
-        // fetch(url)
-        //     .then(response => response.json())
+         fetch(url)
+            .then(response => response.json())
             .then(elems => {
-                setTimeout(() => {
+//                setTimeout(() => {
                     setMas(elems)
                     setLoading(false)
-                },2000)
+//                },2000)
             })
     }, [])
 

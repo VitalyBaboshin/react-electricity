@@ -1,8 +1,11 @@
-import React, {useEffect} from 'react'
-import './index.css';
+import {useEffect, useState} from 'react';
+import {electricity, masElectricity} from "./shared/masElectricity";
 import TableList from "./components/TableList";
-import Loader from './shared/loader'
+
 function App() {
+
+    const [mas, setMas] = useState<masElectricity | null>(null)
+    const [loading, setLoading] = useState(true)
 
     const todo = {
         "electricity": [
@@ -59,14 +62,10 @@ function App() {
         ]
     }
 
-    const [mas, setMas] = React.useState([])
-    const [loading, setLoading] = React.useState(true)
-    // const url = ''
-
     useEffect(() => {
         Promise.resolve(todo)
-        // fetch(url)
-        //     .then(response => response.json())
+            // fetch(url)
+            //     .then(response => response.json())
             .then(elems => {
                 setTimeout(() => {
                     setMas(elems)
@@ -78,9 +77,11 @@ function App() {
     return (
         <div className="container pt-3">
             <div className="row">
-                {loading && <Loader />}
-                {(mas.length !== 0 && mas.electricity && mas.electricity.length !== 0) ?
-                    <TableList todo={mas.electricity}/>
+                <p>123</p>
+
+                {/*{loading && <Loader />}*/}
+                {(mas !== null) ?
+                    <TableList mas={mas.electricity}/>
                     :
                     loading ? null : mas.electricity ?
                         <p style={{textAlign: 'center'}}>Empty mas</p>

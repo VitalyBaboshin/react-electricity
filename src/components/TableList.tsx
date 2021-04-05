@@ -1,8 +1,9 @@
 import React from "react"
 import TableItem from "./TableItem";
 import  "./tableList.css";
+import {electricity} from "../shared/masElectricity";
 
-function TableList(props) {
+function TableList(props: electricity[]) {
     return (
         <div>
             <table className="table table-hover">
@@ -18,8 +19,8 @@ function TableList(props) {
                 </tr>
                 </thead>
                 <tbody>
-                { props.todo.map((elem, index) => {
-                    return <TableItem elem={elem} key={elem.id} index={index}/>
+                { props.map((elem: electricity) => {
+                    return <TableItem elem={elem} key={elem.id}/>
                 }) }
                 </tbody>
             </table>

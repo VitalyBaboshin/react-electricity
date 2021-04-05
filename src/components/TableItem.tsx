@@ -1,7 +1,7 @@
 import React from "react"
 // import  "./tableItem.css";
 
-function TableItem({elem, index}) {
+function TableItem({elem}) {
     return (
         <tr>
             <th >{elem.KTR}</th>
